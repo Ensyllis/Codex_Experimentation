@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="base-path" content="{{ base_path }}" />
     <title>Latent Personality Interview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="{{ base_path }}/static/styles.css" />
   </head>
   <body>
@@ -14,12 +20,21 @@
           <p class="app__eyebrow">Latent Personality Interview</p>
           <h1>LPI Conversational Interview</h1>
           <p class="app__subhead">
-            A surface-to-depth conversation that uncovers latent personality traits.
+            A surface-to-depth conversation that uncovers who you really are.
           </p>
         </div>
-        <button class="button button--secondary" id="finish-interview">
-          Finish Interview
-        </button>
+        <div class="app__header-actions">
+          <button class="button button--secondary" id="finish-interview">
+            Finish Interview
+          </button>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <span class="theme-toggle__knob"></span>
+          </button>
+        </div>
       </header>
 
       <section class="chat">
@@ -28,7 +43,7 @@
           <input
             type="text"
             id="chat-message"
-            placeholder="Share something that has felt meaningful lately..."
+            placeholder="Say whatever comes to mind..."
             autocomplete="off"
           />
           <button class="button" type="submit">Send</button>
@@ -36,7 +51,8 @@
       </section>
 
       <section class="results" id="results">
-        <h2>Interview Profile</h2>
+        <h2>Your Personality Profile</h2>
+        <div id="results-profile"></div>
         <pre class="results__json" id="results-json"></pre>
       </section>
     </main>
