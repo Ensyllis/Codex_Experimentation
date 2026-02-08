@@ -90,8 +90,8 @@ def generate_ai_reply(history: list[dict[str, str]]) -> str:
     api_key = os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
         return (
-            "Thanks for sharing. Could you tell me about a recent moment that felt especially "
-            "meaningful or revealing to you?"
+            "Thanks for sharing. Could you tell me about a recent piece of media "
+            "that really touched your soul?"
         )
 
     client = anthropic.Anthropic(api_key=api_key)
