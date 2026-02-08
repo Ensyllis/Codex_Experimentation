@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="base-path" content="{{ base_path }}" />
+    <title>Latent Personality Interview</title>
+    <link rel="stylesheet" href="{{ base_path }}/static/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__eyebrow">Latent Personality Interview</p>
+          <h1>LPI Conversational Interview</h1>
+          <p class="app__subhead">
+            A surface-to-depth conversation that uncovers latent personality traits.
+          </p>
+        </div>
+        <button class="button button--secondary" id="finish-interview">
+          Finish Interview
+        </button>
+      </header>
+
+      <section class="chat">
+        <div class="chat__log" id="chat-log"></div>
+        <form class="chat__input" id="chat-form">
+          <input
+            type="text"
+            id="chat-message"
+            placeholder="Share something that has felt meaningful lately..."
+            autocomplete="off"
+          />
+          <button class="button" type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="results" id="results">
+        <h2>Interview Profile</h2>
+        <pre class="results__json" id="results-json"></pre>
+      </section>
+    </main>
+
+    <script src="{{ base_path }}/static/app.js"></script>
+  </body>
+</html>
